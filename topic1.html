@@ -1,44 +1,51 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	    <!-- Bootstrap -->
-	    <link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-	    <link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
-	</head>
-	<body>
-		<div class="navbar  navbar-fixed-top">
-		  <div class="navbar-inner">
-		    <div class="container">
-		 
-		      <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
-		      <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		        <span class="icon-bar"></span>
-		      </a>
-		 
-		      <!-- Be sure to leave the brand out there if you want it shown -->
-		      <a class="brand" href="#">JavaScript</a>
-		 
-		      <!-- Everything you want hidden at 940px or less, place within here -->
-		      <div class="nav-collapse collapse">
-		        <!-- .nav, .navbar-search, .navbar-form, etc -->
-		      </div>
-		 
-		    </div>
-		  </div>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<style>
+	body{
+		padding-top:60px;
+	}
+	</style>
+	<link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+
+
+</head>
+<body>
+	<div class="navbar  navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#">JavaScript</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<!-- .nav, .navbar-search, .navbar-form, etc -->
+				</div>
+
+			</div>
 		</div>
-		<h1 class="selected">JavaScript</h1>
-		<nav>
-			<ol>
+	</div>
+	<div class="row">
+		<nav class="span4">
+			<ol  class="nav nav-tabs nav-stacked">
 				<li><a href="topic1.html">javascript란</a></li>
 				<li><a href="topic2.html">데이터타입</a></li>
 				<li><a href="topic3.html">연산자</a></li>
 			</ol>
 		</nav>
-		<article>
+		<article class="span8">
 			<h2>
 				JavaScript란?
 			</h2>
@@ -47,7 +54,9 @@
 			</div>
 		</article>
 
-		<script src="http://code.jquery.com/jquery.js"></script>
-    	<script src="./bootstrap/js/bootstrap.min.js"></script>
-	</body>
+	</div>
+	
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
