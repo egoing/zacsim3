@@ -1,24 +1,139 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="utf-8"/>
-	</head>
-	<body>
-		<h1>JavaScript</h1>
-		<nav>
-			<ol>
-				<li><a href="topic1.html">javascript란</a></li>
-				<li><a href="topic2.html">데이터타입</a></li>
-				<li><a href="topic3.html">연산자</a></li>
-			</ol>
-		</nav>
-		<article>
-			<h2>
-				데이터타입
-			</h2>
-			<div>
-				자바스크립트란 멀까? 
+<head>
+	<meta charset="utf-8"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!-- Bootstrap -->
+	<link href="./bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+	<style>
+	body{
+		padding-top:60px;
+	}
+	</style>
+	<link href="./bootstrap/css/bootstrap-responsive.min.css" rel="stylesheet" media="screen">
+
+
+</head>
+<body>
+	<div class="navbar  navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+
+				<!-- .btn-navbar is used as the toggle for collapsed navbar content -->
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+
+				<!-- Be sure to leave the brand out there if you want it shown -->
+				<a class="brand" href="#">JavaScript</a>
+
+				<!-- Everything you want hidden at 940px or less, place within here -->
+				<div class="nav-collapse collapse">
+					<!-- .nav, .navbar-search, .navbar-form, etc -->
+				</div>
+
 			</div>
-		</article>
-	</body>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<nav class="span4">
+				<ol  class="nav nav-tabs nav-stacked">
+					<li><a href="topic1.html">javascript란</a></li>
+					<li><a href="topic2.html">JSON이란</a></li>
+				</ol>
+			</nav>
+			<article class="span8">
+				<h2>
+					변수와 상수
+				</h2>
+				<div>
+<h3>JSON이란?</h3>
+
+<p>서로 다른 언어들간에 데이터를 주고 받는 여러 방법이 있다. 대표적인 것이 XML인데, XML은 문법이 복잡하고, 엄격한 표현규칙으로 인해서 json 대비 데이터의 용량이 커진다는 단점이 있다.</p>
+
+<p>JSON은 경량의 데이터 교환 형식으로 JavaScript에서 숫자와 배열등을 만드는 형식을 차용해서 이것을 다른 언어에서도 사용할 수 있도록 한 텍스트 형식이다.&nbsp;</p>
+
+<h3>홈페이지</h3>
+
+<p><a href="http://json.org" target="_blank">json.org</a></p>
+
+<h3>예제</h3>
+
+<p>JavaScript와 PHP는 서로 다른 언어다. 그렇기 때문에 배열이나 객체를 주고 받는 것이 쉽지 않다. 이럴 때 JSON을 사용하면 편리하다. 아래는 예제는 JavaScript와 PHP가 객체를 주고 받는 방법을 보여준다.&nbsp;</p>
+
+<div class="note">JSON은 최신 브라우저에서 기본적으로 제공되기&nbsp;때문에 특별한 처리가 필요 없다. 하지만 오래된 브라우저는 JSON을 지원하지 않는다. json2 라이브러리를 사용하면 오래된 브라우저에서도 JSON을 사용할 수 있다.&nbsp;<a href="https://github.com/douglascrockford/JSON-js" style="line-height: 1.8em;" target="_blank">https://github.com/douglascrockford/JSON-js</a></div>
+
+<p><strong>json.html </strong>- (<a href="https://github.com/egoing/codingeverybody_javascript/blob/master/JSON/json.html" target="_blank">github</a>)</p>
+
+
+<p>아래 예제는 위의 예제에서 전송한 데이터를 받아서 몇가지 부가정보를 추가해서 json으로 인코드한 후에 다시 반환하는 PHP 코드다.&nbsp;</p>
+
+<p>json.php - (<a href="https://github.com/egoing/codingeverybody_javascript/blob/master/JSON/json.php" target="_blank">github</a>)</p>
+
+<pre class="brush: php">&lt;?php
+$userinfo = json_decode($_GET['data']);
+$userinfo-&gt;address = 'seoul';
+$userinfo-&gt;phonenumber = '01023456789';
+echo json_encode($userinfo);
+?&gt;</pre>
+
+<h3>json의 형식</h3>
+
+<h3>object</h3>
+
+<p>객체는 아래와 같은 문법을 가지고 있다.</p>
+
+<p>예제</p>
+
+<p>{"userid":"egoing","pwd":"12345567"}</p>
+
+<p><img height="113" src="http://www.json.org/object.gif" width="598"></p>
+
+<h3>array</h3>
+
+<p>배열은 아래와 같은 문법을 가지고 있다.&nbsp;</p>
+
+<p>예제</p>
+
+<p>[1,2,3,4]</p>
+
+<p><img height="113" src="http://www.json.org/array.gif" style="line-height: 1.8em;" width="598"></p>
+
+<h3>Value</h3>
+
+<p>위에서 사용된 Value는 값을 의미하는데&nbsp;큰 따옴표로 묶인 문자나 숫자, 불린 값이 사용된다.</p>
+
+<p>예제</p>
+
+<ul>
+    <li>문자 : "헬로우 월드"</li>
+    <li>숫자 : 1</li>
+ <li>불린 : true</li>
+</ul>
+
+<p><img height="278" src="http://www.json.org/value.gif" width="598"></p>
+
+<h3>String</h3>
+
+<p>문자열은 아래와 같은 문법을 가지고 있다.&nbsp;</p>
+
+<p><img height="413" src="http://www.json.org/string.gif" width="598"></p>
+
+<h3>number</h3>
+
+<p><img height="266" src="http://www.json.org/number.gif" style="line-height: 1.8em;" width="598"></p>
+
+<h3>각 언어별로 JSON을 사용하는 방법</h3>
+
+<p>JSON의 홈페이지를 참고 한다.&nbsp;</p>
+				</div>
+			</article>
+		</div>
+	</div>	
+	<script src="http://code.jquery.com/jquery.js"></script>
+	<script src="./bootstrap/js/bootstrap.min.js"></script>
+</body>
 </html>
