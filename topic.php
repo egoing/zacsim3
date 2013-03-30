@@ -1,6 +1,7 @@
 <?php
 $list_sql = "select id,title from topic";
-
+$desc_sql = "select * from topic where id=".$_GET['id'];
+echo $desc_sql;
 // 1. server 접속
 mysql_connect("localhost", "root", "111111");
 // 2. 데이터베이스를 사용 (use)
@@ -11,7 +12,8 @@ mysql_query("set session character_set_client=utf8;");
 // 3. topic 테이블의 데이터를 가져온다. 
 $result = mysql_query($list_sql);
 
-
+$result_desc = mysql_query($desc_sql);
+$desc = mysql_fetch_array($result_desc);
 
 ?>
 
@@ -60,12 +62,10 @@ $result = mysql_query($list_sql);
 <?php
 while($row=mysql_fetch_array($result)){
 ?>
-<li><?php echo $row['title'];?></li>
+<li><a href="topic.php?id=<?php echo $row['id'] ?>"><?php echo $row['title'];?></a></li>
 <?php
 }
 ?>
-					<li><a href="topic1.html">javascript란</a></li>
-					<li><a href="topic2.html">JSON이란</a></li>
 				</ol>
 			</nav>
 			<article class="span8">
